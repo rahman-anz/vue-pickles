@@ -1,3 +1,3 @@
 <template>
-  <h2>home</h2>
+  <h2>by letter</h2>
 </template>

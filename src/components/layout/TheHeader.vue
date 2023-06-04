@@ -3,8 +3,8 @@
     <h2 class="logo">Pickles</h2>
     <div>
       <router-link to="/by-name">Search Recipe</router-link>
-      <router-link to="/">Search by Letter</router-link>
-      <router-link to="/">Search by Ingredient</router-link>
+      <router-link :to="{ name: 'by-letter' }">Filter by Letter</router-link>
+      <router-link :to="{ name: 'areas' }">Filter by Area</router-link>
       <router-link to="/"><UserCircleIcon class="user-icon" /></router-link>
     </div>
   </header>
@@ -37,7 +37,7 @@ a {
   padding: 2rem 2rem;
 }
 
-a:active,
+.router-link-active,
 a:hover {
   background-color: rgba(254, 254, 254, 0.277);
 }
