@@ -5,4 +5,7 @@ export default {
   getAllAreas: (state) => {
     return state.allAreas;
   },
+  getAreaMeals: (state) => {
+    return state.areaMeals;
+  },
 };

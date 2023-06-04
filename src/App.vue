@@ -24,6 +24,6 @@ body {
 }
 .main-box {
   min-height: 100vh;
-  background-color: rgba(202, 202, 202, 0.591);
+  background-color: #ddd;
 }
 </style>

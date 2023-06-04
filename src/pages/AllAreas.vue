@@ -33,7 +33,7 @@ h2 {
 }
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 3rem;
   row-gap: 3rem;
 }

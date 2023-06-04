@@ -9,7 +9,9 @@
           <h3 class="title">{{ title }}</h3></router-link
         >
         <div class="link-box">
-          <a :href="youtube" target="_blank" class="youtube">Youtube</a>
+          <a v-if="youtube" :href="youtube" target="_blank" class="youtube"
+            >Youtube</a
+          >
           <router-link to="/" class="details">Save Recipe</router-link>
         </div>
       </div>

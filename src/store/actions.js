@@ -8,9 +8,17 @@ export default {
   },
   async searchAllAreas() {
     const res = await fetch(
-      `https:themealdb.com/api/json/v1/1/list.php?a=list`
+      `https://themealdb.com/api/json/v1/1/list.php?a=list`
     );
     const data = await res.json();
     this.allAreas = data.meals;
+  },
+  async filterByArea(area) {
+    const res = await fetch(
+      `https://themealdb.com/api/json/v1/1/filter.php?a=${area}`
+    );
+    const data = await res.json();
+    this.areaMeals = data.meals;
+    console.log(this.areaMeals);
   },
 };
