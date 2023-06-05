@@ -4,6 +4,7 @@ import ByName from "./pages/ByName.vue";
 import AllAreas from "./pages/AllAreas.vue";
 import ByArea from "./pages/ByArea.vue";
 import RecipeDetails from "./pages/RecipeDetails.vue";
+import UserSaved from "./pages/UserSaved.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -36,6 +37,11 @@ const router = createRouter({
       path: "/details/:id?",
       name: "details",
       component: RecipeDetails,
+    },
+    {
+      path: "/saved",
+      name: "saved",
+      component: UserSaved,
     },
   ],
 });

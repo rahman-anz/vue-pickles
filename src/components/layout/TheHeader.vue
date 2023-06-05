@@ -5,7 +5,9 @@
       <router-link to="/by-name">Search Recipe</router-link>
       <router-link :to="{ name: 'by-letter' }">Filter by Letter</router-link>
       <router-link :to="{ name: 'areas' }">Filter by Area</router-link>
-      <router-link to="/"><UserCircleIcon class="user-icon" /></router-link>
+      <router-link :to="{ name: 'saved' }"
+        ><UserCircleIcon class="user-icon"
+      /></router-link>
     </div>
   </header>
 </template>
@@ -43,7 +45,7 @@ a:hover {
 }
 .user-icon {
   height: 3rem;
-  color: white;
+  color: orange;
 }
 header div {
   display: flex;

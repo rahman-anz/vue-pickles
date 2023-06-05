@@ -8,4 +8,7 @@ export default {
   getAreaMeals: (state) => {
     return state.areaMeals;
   },
+  getLetterMeals: (state) => {
+    return state.letterMeals;
+  },
 };

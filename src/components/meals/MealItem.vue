@@ -57,17 +57,23 @@ a {
 .youtube {
   background-color: rgb(159, 17, 17);
   transition: all 0.4s;
-  border: 1px solid black;
+
+  border: 2px solid black;
 }
 .youtube:hover {
-  background-color: rgba(198, 0, 0, 0.773);
+  border: 2px solid rgba(198, 0, 0, 0.773);
+  background-color: white;
+  color: #333;
 }
 .details {
   background-color: orange;
+  border: 2px solid transparent;
   transition: all 0.4s;
 }
 .details:hover {
-  background-color: rgb(200, 133, 8);
+  background-color: white;
+  color: #333;
+  border: 2px solid rgb(200, 133, 8);
 }
 li:hover {
   /* transform: translateY(-0.4rem);

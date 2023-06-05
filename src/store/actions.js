@@ -19,6 +19,13 @@ export default {
     );
     const data = await res.json();
     this.areaMeals = data.meals;
-    console.log(this.areaMeals);
+  },
+  async filterByLetter(letter) {
+    const res = await fetch(
+      `https://themealdb.com/api/json/v1/1/search.php?f=${letter}`
+    );
+    const data = await res.json();
+    console.log(data);
+    this.letterMeals = data.meals;
   },
 };

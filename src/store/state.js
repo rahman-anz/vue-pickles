@@ -1,5 +1,6 @@
 export default {
   searchedMeals: [],
   allAreas: [],
-  areaMeals:[]
+  areaMeals:[],
+  letterMeals:[]
 };

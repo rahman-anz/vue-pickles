@@ -19,8 +19,8 @@ defineProps({ meals: Object });
 .container {
   display: grid;
   width: 120rem;
-  margin: 2rem auto;
-  column-gap: 3rem;
+  margin: 3rem auto;
+  column-gap: 4rem;
   row-gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
 }

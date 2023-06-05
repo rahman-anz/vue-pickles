@@ -38,7 +38,7 @@ section {
   margin-bottom: 3rem;
 }
 img {
-  width: 75%;
+  width: 100%;
 }
 .img-box {
   display: flex;
