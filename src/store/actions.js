@@ -28,4 +28,13 @@ export default {
     console.log(data);
     this.letterMeals = data.meals;
   },
+  saveMeal(title, image, youtube, id) {
+    const recipe = {
+      idMeal: id,
+      strMeal: title,
+      strMealThumb: image,
+      strYoutube: youtube,
+    };
+    this.savedMeals.unshift(recipe);
+  },
 };

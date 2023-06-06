@@ -12,15 +12,26 @@
           <a v-if="youtube" :href="youtube" target="_blank" class="youtube"
             >Youtube</a
           >
-          <router-link to="/" class="details">Save Recipe</router-link>
+          <btn class="save" @click="sendToSave">Save Recipe</btn>
         </div>
       </div>
     </div>
   </li>
 </template>
 <script setup>
-import defineProps from "vue";
-defineProps({ title: String, image: String, youtube: String, id: String });
+import useUserStore from "@/store";
+import { defineProps, defineExpose } from "vue";
+const props = defineProps({
+  title: String,
+  image: String,
+  youtube: String,
+  id: String,
+});
+const store = useUserStore();
+const sendToSave = () => {
+  store.saveMeal(props.title, props.image, props.youtube, props.id);
+};
+defineExpose({ sendToSave });
 </script>
 <style scoped>
 .container {
@@ -49,7 +60,8 @@ a {
   text-decoration: none;
   color: #333;
 }
-.link-box a {
+.link-box a,
+.link-box btn {
   color: white;
   padding: 1rem 2rem;
   border-radius: 9px;
@@ -65,12 +77,14 @@ a {
   background-color: white;
   color: #333;
 }
-.details {
+.save {
+  display: inline-block;
   background-color: orange;
   border: 2px solid transparent;
   transition: all 0.4s;
+  cursor: pointer;
 }
-.details:hover {
+.save:hover {
   background-color: white;
   color: #333;
   border: 2px solid rgb(200, 133, 8);

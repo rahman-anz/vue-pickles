@@ -1,7 +1,7 @@
 <template>
   <header>
     <h2 class="logo">Pickles</h2>
-    <div>
+    <div class="links">
       <router-link to="/by-name">Search Recipe</router-link>
       <router-link :to="{ name: 'by-letter' }">Filter by Letter</router-link>
       <router-link :to="{ name: 'areas' }">Filter by Area</router-link>
@@ -38,7 +38,6 @@ a {
   font-size: 1.8rem;
   padding: 2rem 2rem;
 }
-
 .router-link-active,
 a:hover {
   background-color: rgba(254, 254, 254, 0.277);
@@ -47,7 +46,7 @@ a:hover {
   height: 3rem;
   color: orange;
 }
-header div {
+.links {
   display: flex;
   align-items: center;
   gap: 2rem;

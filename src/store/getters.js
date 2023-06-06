@@ -11,4 +11,7 @@ export default {
   getLetterMeals: (state) => {
     return state.letterMeals;
   },
+  getSavedMeals: (state) => {
+    return state.savedMeals;
+  },
 };
