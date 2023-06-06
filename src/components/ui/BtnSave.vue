@@ -1,6 +1,10 @@
 <template>
-  <button><slot></slot></button>
+  <button :class="[{ flat: mode }]"><slot></slot></button>
 </template>
+<script setup>
+import defineProps from "vue";
+defineProps({ mode: Boolean });
+</script>
 <style scoped>
 button {
   padding: 1rem 2rem;
@@ -13,8 +17,15 @@ button {
   cursor: pointer;
 }
 button:hover {
+  color: #333;
+  background-color: white;
+  border: 2px solid orange;
+}
+.flat {
   background-color: white;
   color: #333;
-  border: 2px solid rgb(200, 133, 8);
+  border: 2px solid cornflowerblue;
+}
+.flat:hover {
 }
 </style>

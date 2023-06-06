@@ -28,13 +28,20 @@ export default {
     this.letterMeals = data.meals;
   },
   saveMeal(title, image, youtube, id) {
+    const alreadySaved = this.savedMeals.find((meal) => meal.idMeal === id);
+    if (alreadySaved) return;
     const recipe = {
       idMeal: id,
       strMeal: title,
       strMealThumb: image,
       strYoutube: youtube,
-      saved: true,
     };
     this.savedMeals.unshift(recipe);
+  },
+  removeSaved(id) {
+    const selectedMealIndex = this.savedMeals.findIndex(
+      (meal) => meal.idMeal == id
+    );
+    this.savedMeals.splice(selectedMealIndex, 1);
   },
 };

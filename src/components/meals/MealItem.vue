@@ -9,10 +9,10 @@
           <h3 class="title">{{ title }}</h3></router-link
         >
         <div class="link-box">
-          <a v-if="youtube" :href="youtube" target="_blank" class="youtube"
-            >Youtube</a
+          <btn-youtube v-if="youtube" :href="youtube"></btn-youtube>
+          <btn-save v-if="isSaved" :mode="isSaved" @click="undoSave"
+            >Unsave Recipe</btn-save
           >
-          <btn-save v-if="saved">Unsave Recipe</btn-save>
           <btn-save v-else @click="sendToSave">Save Recipe</btn-save>
         </div>
       </div>
@@ -21,23 +21,27 @@
 </template>
 <script setup>
 import useUserStore from "@/store";
-import { defineProps, defineExpose } from "vue";
+import { defineProps, defineExpose, computed } from "vue";
 import BtnSave from "../ui/BtnSave.vue";
+import BtnYoutube from "../ui/BtnYoutube.vue";
 const props = defineProps({
   title: String,
   image: String,
   youtube: String,
   id: String,
-  saved: {
-    type: Boolean,
-    required: false,
-  },
 });
 const store = useUserStore();
 const sendToSave = () => {
   store.saveMeal(props.title, props.image, props.youtube, props.id);
 };
-defineExpose({ sendToSave });
+const undoSave = () => {
+  store.removeSaved(props.id);
+};
+const isSaved = computed(() => {
+  if (store.savedMeals.find((meal) => meal.idMeal === props.id)) return true;
+  else return false;
+});
+defineExpose({ sendToSave, undoSave });
 </script>
 <style scoped>
 .container {
@@ -64,20 +68,6 @@ defineExpose({ sendToSave });
 a {
   display: inline-block;
   text-decoration: none;
-  color: #333;
-}
-
-.youtube {
-  background-color: rgb(159, 17, 17);
-  transition: all 0.4s;
-  padding: 1rem 2rem;
-  border-radius: 9px;
-  color: white;
-  border: 2px solid black;
-}
-.youtube:hover {
-  border: 2px solid rgba(198, 0, 0, 0.773);
-  background-color: white;
   color: #333;
 }
 
