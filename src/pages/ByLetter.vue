@@ -30,6 +30,7 @@ defineExpose({ alphabets, store });
 section {
   width: 120rem;
   margin: 3rem auto;
+  padding: 0 0 3rem;
 }
 h2 {
   text-align: center;

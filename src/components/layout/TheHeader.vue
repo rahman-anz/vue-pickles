@@ -18,11 +18,14 @@ import { UserCircleIcon } from "@heroicons/vue/24/outline";
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 header {
   /* width: 100vw; */
+  position: sticky;
+  top: 0;
   background-color: rgb(0, 0, 0);
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 .logo {
   font-family: "Dancing Script", cursive;

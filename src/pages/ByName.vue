@@ -29,4 +29,8 @@ input {
   padding: 2rem;
   width: 60%;
 }
+input:focus {
+  outline: 1px solid orange;
+  /* outline-offset: 2px; */
+}
 </style>

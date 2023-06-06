@@ -12,7 +12,8 @@
           <a v-if="youtube" :href="youtube" target="_blank" class="youtube"
             >Youtube</a
           >
-          <btn class="save" @click="sendToSave">Save Recipe</btn>
+          <btn-save v-if="saved">Unsave Recipe</btn-save>
+          <btn-save v-else @click="sendToSave">Save Recipe</btn-save>
         </div>
       </div>
     </div>
@@ -21,11 +22,16 @@
 <script setup>
 import useUserStore from "@/store";
 import { defineProps, defineExpose } from "vue";
+import BtnSave from "../ui/BtnSave.vue";
 const props = defineProps({
   title: String,
   image: String,
   youtube: String,
   id: String,
+  saved: {
+    type: Boolean,
+    required: false,
+  },
 });
 const store = useUserStore();
 const sendToSave = () => {
@@ -60,16 +66,13 @@ a {
   text-decoration: none;
   color: #333;
 }
-.link-box a,
-.link-box btn {
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 9px;
-}
+
 .youtube {
   background-color: rgb(159, 17, 17);
   transition: all 0.4s;
-
+  padding: 1rem 2rem;
+  border-radius: 9px;
+  color: white;
   border: 2px solid black;
 }
 .youtube:hover {
@@ -77,32 +80,21 @@ a {
   background-color: white;
   color: #333;
 }
-.save {
-  display: inline-block;
-  background-color: orange;
-  border: 2px solid transparent;
-  transition: all 0.4s;
-  cursor: pointer;
-}
-.save:hover {
-  background-color: white;
-  color: #333;
-  border: 2px solid rgb(200, 133, 8);
-}
-li:hover {
-  /* transform: translateY(-0.4rem);
-   */
-  scale: 1.03;
-}
-li:hover img {
-  scale: 1.1;
-}
+
 li {
   list-style: none;
   transition: all 0.4s;
 }
+
+li:hover {
+  scale: 1.02;
+}
+
 img {
   width: 100%;
   transition: all 0.4s;
+}
+li:hover img {
+  scale: 1.1;
 }
 </style>

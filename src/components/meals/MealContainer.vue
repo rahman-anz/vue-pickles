@@ -6,6 +6,7 @@
         :title="meal.strMeal"
         :image="meal.strMealThumb"
         :youtube="meal.strYoutube"
+        :saved="meal.saved "
       ></meal-item>
     </ul>
   </div>

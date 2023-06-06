@@ -25,7 +25,6 @@ export default {
       `https://themealdb.com/api/json/v1/1/search.php?f=${letter}`
     );
     const data = await res.json();
-    console.log(data);
     this.letterMeals = data.meals;
   },
   saveMeal(title, image, youtube, id) {
@@ -34,6 +33,7 @@ export default {
       strMeal: title,
       strMealThumb: image,
       strYoutube: youtube,
+      saved: true,
     };
     this.savedMeals.unshift(recipe);
   },

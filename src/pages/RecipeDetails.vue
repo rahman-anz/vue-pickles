@@ -23,7 +23,6 @@ onMounted(async () => {
   );
   const data = await res.json();
   [recipe.value] = data.meals;
-  console.log(recipe.value);
 });
 </script>
 <style scoped>
