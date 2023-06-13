@@ -11,10 +11,10 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      redirect: "/saved",
+      redirect: "/by-letter/E",
     },
     {
-      path: "/by-name",
+      path: "/by-name/:name?",
       name: "by-name",
       component: ByName,
     },

@@ -2,7 +2,7 @@
   <header>
     <h2 class="logo">Pickles</h2>
     <div class="links">
-      <router-link to="/by-name">Search Recipe</router-link>
+      <router-link :to="{ name: 'by-name' }">Search Recipe</router-link>
       <router-link :to="{ name: 'by-letter' }">Filter by Letter</router-link>
       <router-link :to="{ name: 'areas' }">Filter by Area</router-link>
       <button @click="goToSaved" class="saved">
@@ -60,14 +60,14 @@ button {
 }
 
 a:hover {
-  background-color: rgba(254, 254, 254, 0.207);
+  background-color: rgba(254, 254, 254, 0.25);
 }
 button:hover {
-  background-color: rgba(254, 254, 254, 0.318);
+  background-color: rgba(254, 254, 254, 0.35);
   border-radius: 9px;
 }
 .router-link-active {
-  background-color: rgba(254, 254, 254, 0.207);
+  background-color: rgba(254, 254, 254, 0.25);
 
   border: 1px solid orange;
 }
@@ -87,12 +87,12 @@ button:hover {
 }
 .saved-counter {
   position: absolute;
-  padding: 0.3rem 0.8rem;
+  padding: 0.3rem 0.6rem;
   background-color: orange;
   color: white;
   border-radius: 50%;
   font-size: 1.2rem;
-  top: -0.5rem;
+  top: 0rem;
   right: 0;
 }
 </style>

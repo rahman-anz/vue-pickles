@@ -6,7 +6,7 @@
       /></router-link>
       <div class="text-box">
         <router-link :to="{ name: 'details', params: { id: id } }">
-          <h3 class="title">{{ title }}</h3></router-link
+          <h3 class="title">{{ shortenedTitle }}</h3></router-link
         >
         <div class="link-box">
           <btn-youtube v-if="youtube" :href="youtube"></btn-youtube>
@@ -33,6 +33,10 @@ const props = defineProps({
   id: String,
 });
 const store = useUserStore();
+const shortenedTitle = computed(() => {
+  if (props.title.length < 23) return props.title;
+  else return props.title.slice(0, 22) + "...";
+});
 const sendToSave = () => {
   store.addCounter();
   store.saveMeal(props.title, props.image, props.youtube, props.id);

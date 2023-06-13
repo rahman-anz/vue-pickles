@@ -11,11 +11,16 @@
         </li>
       </ul>
     </div>
-    <meal-container :meals="store.getLetterMeals"></meal-container>
+    <meal-container
+      v-if="store.hasLetterMeals"
+      :meals="store.getLetterMeals"
+    ></meal-container>
+    <p v-else-if="!route.params.letter">Please choose a letter</p>
+    <p v-else>There are no Recipe's for the selected letter 🙁</p>
   </section>
 </template>
 <script setup>
-import { defineExpose, watch } from "vue";
+import { defineExpose, onMounted, watch } from "vue";
 import useUserStore from "@/store";
 import { useRoute } from "vue-router";
 const store = useUserStore();
@@ -23,6 +28,11 @@ const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const route = useRoute();
 watch(route, () => {
   store.filterByLetter(route.params.letter);
+});
+onMounted(() => {
+  if (route.params.letter) {
+    store.filterByLetter(route.params.letter);
+  }
 });
 defineExpose({ alphabets, store });
 </script>
@@ -32,7 +42,7 @@ section {
 }
 h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .alphabets {
   display: flex;
@@ -52,5 +62,10 @@ a:visited {
 }
 .router-link-active {
   background-color: black;
+}
+p {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 3rem;
 }
 </style>

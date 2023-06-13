@@ -11,8 +11,14 @@ export default {
   getLetterMeals: (state) => {
     return state.letterMeals;
   },
+  hasLetterMeals: (state) => {
+    return state.letterMeals && state.letterMeals.length > 0;
+  },
   getSavedMeals: (state) => {
     return state.savedMeals;
+  },
+  hasSavedMeals: (state) => {
+    return state.savedMeals && state.savedMeals.length > 0;
   },
   getSavedCounter: (state) => {
     return state.savedCounter;
