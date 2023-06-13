@@ -18,7 +18,7 @@ defineProps({ meals: Object });
 <style scoped>
 .container {
   display: grid;
-  width: 120rem;
+  width: 125rem;
   margin: 3rem auto;
   column-gap: 4rem;
   row-gap: 3rem;

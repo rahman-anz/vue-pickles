@@ -10,8 +10,9 @@
         >
         <div class="link-box">
           <btn-youtube v-if="youtube" :href="youtube"></btn-youtube>
+          <btn-details v-else :id="id" />
           <btn-save v-if="isSaved" :mode="isSaved" @click="undoSave"
-            >Unsave Recipe</btn-save
+            >Unsave Item</btn-save
           >
           <btn-save v-else @click="sendToSave">Save Recipe</btn-save>
         </div>
@@ -22,6 +23,7 @@
 <script setup>
 import useUserStore from "@/store";
 import { defineProps, defineExpose, computed } from "vue";
+import BtnDetails from "../ui/BtnDetails.vue";
 import BtnSave from "../ui/BtnSave.vue";
 import BtnYoutube from "../ui/BtnYoutube.vue";
 const props = defineProps({
@@ -32,10 +34,13 @@ const props = defineProps({
 });
 const store = useUserStore();
 const sendToSave = () => {
+  store.addCounter();
   store.saveMeal(props.title, props.image, props.youtube, props.id);
 };
 const undoSave = () => {
   store.removeSaved(props.id);
+  if (store.savedCounter === 0) return;
+  store.minusCounter();
 };
 const isSaved = computed(() => {
   if (store.savedMeals.find((meal) => meal.idMeal === props.id)) return true;

@@ -4,4 +4,5 @@ export default {
   areaMeals: [],
   letterMeals: [],
   savedMeals: [],
+  savedCounter:0
 };

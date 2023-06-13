@@ -11,7 +11,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      redirect: "/by-name",
+      redirect: "/saved",
     },
     {
       path: "/by-name",

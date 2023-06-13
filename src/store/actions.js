@@ -30,18 +30,38 @@ export default {
   saveMeal(title, image, youtube, id) {
     const alreadySaved = this.savedMeals.find((meal) => meal.idMeal === id);
     if (alreadySaved) return;
-    const recipe = {
+    const meals = {
       idMeal: id,
       strMeal: title,
       strMealThumb: image,
       strYoutube: youtube,
     };
-    this.savedMeals.unshift(recipe);
+    this.savedMeals.unshift(meals);
+    this.setLocalStorage()
   },
   removeSaved(id) {
     const selectedMealIndex = this.savedMeals.findIndex(
       (meal) => meal.idMeal == id
     );
     this.savedMeals.splice(selectedMealIndex, 1);
+    this.setLocalStorage()
+  },
+  addCounter() {
+    this.savedCounter++;
+  },
+  minusCounter() {
+    this.savedCounter--;
+  },
+  setZeroCounter() {
+    this.savedCounter = 0;
+  },
+  getLocalStorage() {
+    if (localStorage.meals) {
+      const localMeals = localStorage.getItem("meals");
+      this.savedMeals = JSON.parse(localMeals);
+    } else return;
+  },
+  setLocalStorage() {
+    localStorage.setItem("meals", JSON.stringify(this.savedMeals));
   },
 };

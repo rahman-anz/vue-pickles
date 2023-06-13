@@ -14,4 +14,7 @@ export default {
   getSavedMeals: (state) => {
     return state.savedMeals;
   },
+  getSavedCounter: (state) => {
+    return state.savedCounter;
+  },
 };

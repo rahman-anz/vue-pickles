@@ -28,9 +28,7 @@ defineExpose({ alphabets, store });
 </script>
 <style scoped>
 section {
-  width: 120rem;
-  margin: 3rem auto;
-  padding: 0 0 3rem;
+  padding: 3rem 0;
 }
 h2 {
   text-align: center;
@@ -49,7 +47,7 @@ a:visited {
   font-size: 2rem;
   color: rgb(226, 153, 17);
   text-decoration: none;
-  padding: 0.6rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 50%;
 }
 .router-link-active {

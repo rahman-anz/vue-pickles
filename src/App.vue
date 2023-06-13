@@ -5,7 +5,13 @@
   </div>
 </template>
 <script setup>
+import { onMounted } from "vue";
 import TheHeader from "./components/layout/TheHeader.vue";
+import useUserStore from "./store";
+const store = useUserStore();
+onMounted(() => {
+  store.getLocalStorage();
+});
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");

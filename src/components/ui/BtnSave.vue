@@ -24,8 +24,6 @@ button:hover {
 .flat {
   background-color: white;
   color: #333;
-  border: 2px solid cornflowerblue;
-}
-.flat:hover {
+  border: 2px solid orange;
 }
 </style>
