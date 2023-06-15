@@ -1,7 +1,8 @@
 <template>
   <section>
     <h2>{{ route.params.area }} Recipies</h2>
-    <meal-container :meals="store.getAreaMeals"></meal-container>
+    <load-spinner v-if="store.areaMeals.isLoading"></load-spinner>
+    <meal-container v-else :meals="store.getAreaMeals"></meal-container>
   </section>
 </template>
 <script setup>
@@ -15,11 +16,14 @@ defineExpose({ store });
 </script>
 <style scoped>
 section {
-  padding: 2rem;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 h2 {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 </style>

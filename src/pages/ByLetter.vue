@@ -11,8 +11,9 @@
         </li>
       </ul>
     </div>
+    <load-spinner v-if="store.letterMeals.isLoading"></load-spinner>
     <meal-container
-      v-if="store.hasLetterMeals"
+      v-else-if="store.hasLetterMeals"
       :meals="store.getLetterMeals"
     ></meal-container>
     <p v-else-if="!route.params.letter">Please choose a letter</p>
@@ -39,6 +40,9 @@ defineExpose({ alphabets, store });
 <style scoped>
 section {
   padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 h2 {
   text-align: center;
@@ -51,6 +55,7 @@ h2 {
 }
 ul {
   list-style: none;
+  margin-bottom: 1rem;
 }
 a:link,
 a:visited {
@@ -66,6 +71,6 @@ a:visited {
 p {
   font-size: 1.8rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 </style>

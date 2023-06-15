@@ -6,10 +6,15 @@
       v-model="searchterm"
       @keyup="searchMeal"
     />
-    <p v-if="!searchterm">
+    <load-spinner v-if="store.searchedMeals.isLoading"></load-spinner>
+    <meal-container
+      v-else-if="store.hasSearchedMeals"
+      :meals="store.getSearchedMeals"
+    ></meal-container>
+    <p v-else-if="!searchterm">
       Enter the name of the Recipe you wish to search for
     </p>
-    <meal-container :meals="store.getSearchedMeals"></meal-container>
+    <p v-else>There are no Recipes by that name</p>
   </section>
 </template>
 <script setup>
@@ -33,10 +38,11 @@ onMounted(() => {
 section {
   display: flex;
   flex-direction: column;
+
   align-items: center;
 }
 input {
-  margin: 2rem 0 3rem;
+  margin: 2rem 0 2.3rem;
   padding: 2rem;
   width: 60%;
 }
@@ -46,5 +52,6 @@ input:focus {
 }
 p {
   font-size: 1.6rem;
+  margin-top: 2rem;
 }
 </style>

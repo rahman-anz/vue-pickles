@@ -1,18 +1,21 @@
 export default {
   getSearchedMeals: (state) => {
-    return state.searchedMeals;
+    return state.searchedMeals.data;
+  },
+  hasSearchedMeals: (state) => {
+    return state.searchedMeals.data && state.searchedMeals.data.length > 0;
   },
   getAllAreas: (state) => {
-    return state.allAreas;
+    return state.allAreas.data;
   },
   getAreaMeals: (state) => {
-    return state.areaMeals;
+    return state.areaMeals.data;
   },
   getLetterMeals: (state) => {
-    return state.letterMeals;
+    return state.letterMeals.data;
   },
   hasLetterMeals: (state) => {
-    return state.letterMeals && state.letterMeals.length > 0;
+    return state.letterMeals.data && state.letterMeals.data.length > 0;
   },
   getSavedMeals: (state) => {
     return state.savedMeals;

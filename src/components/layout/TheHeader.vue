@@ -60,14 +60,14 @@ button {
 }
 
 a:hover {
-  background-color: rgba(254, 254, 254, 0.25);
+  background-color: rgba(254, 254, 254, 0.15);
 }
 button:hover {
-  background-color: rgba(254, 254, 254, 0.35);
+  background-color: rgba(254, 254, 254, 0.3);
   border-radius: 9px;
 }
 .router-link-active {
-  background-color: rgba(254, 254, 254, 0.25);
+  background-color: rgba(254, 254, 254, 0.15);
 
   border: 1px solid orange;
 }

@@ -21,6 +21,7 @@ section {
 h2 {
   text-align: center;
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 p {
   font-size: 1.8rem;

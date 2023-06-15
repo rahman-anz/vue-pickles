@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>All Areas</h2>
-    <div class="container">
+    <div v-if="store.allAreas.data" class="container">
       <ul v-for="area in store.getAllAreas" :key="area">
         <router-link :to="{ name: 'by-area', params: { area: area.strArea } }">
           <li>
@@ -10,6 +10,7 @@
         </router-link>
       </ul>
     </div>
+    <load-spinner v-else></load-spinner>
   </section>
 </template>
 <script setup>
@@ -29,7 +30,7 @@ section {
 h2 {
   text-align: center;
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .container {
   display: grid;

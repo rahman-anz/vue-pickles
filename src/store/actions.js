@@ -1,31 +1,39 @@
 export default {
   async searchByName(name) {
+    this.searchedMeals.isLoading = true;
     const res = await fetch(
       `https://themealdb.com/api/json/v1/1/search.php?s=${name}`
     );
     const data = await res.json();
-    this.searchedMeals = data.meals;
+    this.searchedMeals.data = data.meals;
+    this.searchedMeals.isLoading = false;
   },
   async searchAllAreas() {
+    this.allAreas.isLoading = true;
     const res = await fetch(
       `https://themealdb.com/api/json/v1/1/list.php?a=list`
     );
     const data = await res.json();
-    this.allAreas = data.meals;
+    this.allAreas.data = data.meals;
+    this.allAreas.isLoading = false;
   },
   async filterByArea(area) {
+    this.areaMeals.isLoading = true;
     const res = await fetch(
       `https://themealdb.com/api/json/v1/1/filter.php?a=${area}`
     );
     const data = await res.json();
-    this.areaMeals = data.meals;
+    this.areaMeals.data = data.meals;
+    this.areaMeals.isLoading = false;
   },
   async filterByLetter(letter) {
+    this.letterMeals.isLoading = true;
     const res = await fetch(
       `https://themealdb.com/api/json/v1/1/search.php?f=${letter}`
     );
     const data = await res.json();
-    this.letterMeals = data.meals;
+    this.letterMeals.data = data.meals;
+    this.letterMeals.isLoading = false;
   },
   saveMeal(title, image, youtube, id) {
     const alreadySaved = this.savedMeals.find((meal) => meal.idMeal === id);
@@ -37,14 +45,14 @@ export default {
       strYoutube: youtube,
     };
     this.savedMeals.unshift(meals);
-    this.setLocalStorage()
+    this.setLocalStorage();
   },
   removeSaved(id) {
     const selectedMealIndex = this.savedMeals.findIndex(
       (meal) => meal.idMeal == id
     );
     this.savedMeals.splice(selectedMealIndex, 1);
-    this.setLocalStorage()
+    this.setLocalStorage();
   },
   addCounter() {
     this.savedCounter++;

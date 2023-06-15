@@ -4,8 +4,9 @@
 <style scoped>
 .lds-dual-ring {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  margin-top: 8rem;
+  width: 10rem;
+  height: 10rem;
 }
 .lds-dual-ring:after {
   content: " ";
@@ -14,7 +15,7 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid orange;
+  border: 9px solid orange;
   border-color: orange transparent orange transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
