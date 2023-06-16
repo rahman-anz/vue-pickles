@@ -32,4 +32,9 @@ body {
   min-height: 100vh;
   background-color: #ddd;
 }
+@media (max-width: 32em) {
+  html {
+    font-size: 59%;
+  }
+}
 </style>

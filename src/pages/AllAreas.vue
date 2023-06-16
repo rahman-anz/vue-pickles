@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 <style scoped>
 section {
-  width: 100rem;
+  max-width: 100rem;
   margin: 0 auto;
   padding: 3rem 0;
 }
@@ -35,6 +35,7 @@ h2 {
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding: 0 2rem;
   column-gap: 3rem;
   row-gap: 3rem;
 }
@@ -52,5 +53,14 @@ li {
 a {
   text-decoration: none;
   color: #333;
+}
+@media (max-width: 32em) {
+  .container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  li {
+    padding: 1.5rem;
+  }
 }
 </style>

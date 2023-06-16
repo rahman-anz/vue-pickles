@@ -73,4 +73,11 @@ p {
   text-align: center;
   margin-top: 2rem;
 }
+@media (max-width: 32em) {
+  .alphabets {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
 </style>

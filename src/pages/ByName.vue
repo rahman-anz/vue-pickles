@@ -54,4 +54,14 @@ p {
   font-size: 1.6rem;
   margin-top: 2rem;
 }
+@media (max-width: 32em) {
+  input {
+    text-align: center;
+    width: 80%;
+  }
+  p {
+    padding: 0 2rem;
+    margin-top: 1rem;
+  }
+}
 </style>

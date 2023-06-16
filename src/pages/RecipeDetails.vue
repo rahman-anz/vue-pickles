@@ -33,7 +33,7 @@ onMounted(async () => {
 </script>
 <style scoped>
 section {
-  width: 100rem;
+  max-width: 100rem;
   margin: 0 auto;
   padding: 3rem 0;
   display: flex;
@@ -64,10 +64,27 @@ strong {
   margin-bottom: 2rem;
 }
 .instructions {
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 1.8rem;
 }
 .spinner {
   padding-top: 6rem;
+}
+@media (max-width: 32em) {
+  img {
+    width: 90%;
+  }
+  .text-box {
+    display: block;
+    padding: 0 6rem;
+  }
+  .text-box p {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .instructions {
+    padding: 0 2rem;
+  }
 }
 </style>

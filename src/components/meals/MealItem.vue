@@ -96,4 +96,5 @@ img {
 li:hover img {
   scale: 1.1;
 }
+
 </style>

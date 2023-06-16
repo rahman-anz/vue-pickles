@@ -25,4 +25,9 @@ defineProps({ id: String });
   background-color: white;
   color: #333;
 }
+@media (max-width: 32em) {
+  .details {
+    font-size: 1.5rem;
+  }
+}
 </style>
