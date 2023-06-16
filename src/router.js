@@ -11,7 +11,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      redirect: "/by-letter/E",
+      redirect: "/areas",
     },
     {
       path: "/by-name/:name?",

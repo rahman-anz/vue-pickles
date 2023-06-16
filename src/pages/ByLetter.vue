@@ -79,5 +79,9 @@ p {
     gap: 0.5rem;
     grid-template-columns: repeat(8, 1fr);
   }
+  p {
+    line-height: 1.6;
+    padding: 2rem;
+  }
 }
 </style>

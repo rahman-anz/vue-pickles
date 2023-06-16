@@ -148,7 +148,7 @@ nav {
   header {
     padding: 0.2rem;
     height: 9rem;
-    position: relative;
+    position: relative, sticky;
   }
   .logo {
     font-size: 4.2rem;
