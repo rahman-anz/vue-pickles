@@ -12,12 +12,19 @@
         <p><strong>Tags : </strong> {{ recipe.strTags || "None" }}</p>
       </div>
       <p class="instructions">{{ recipe.strInstructions }}</p>
+      <div class="links">
+        <btn-youtube :href="recipe.strYoutube">Go to Youtube </btn-youtube>
+        <btn-youtube :href="recipe.strSource" orange
+          >Original Source</btn-youtube
+        >
+      </div>
     </div>
   </section>
 </template>
 <script setup>
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
+import BtnYoutube from "../components/ui/BtnYoutube.vue";
 const route = useRoute();
 const recipe = ref("");
 const isLoading = ref(false);
@@ -28,6 +35,7 @@ onMounted(async () => {
   );
   const data = await res.json();
   [recipe.value] = data.meals;
+  console.log(recipe.value);
   isLoading.value = false;
 });
 </script>
@@ -66,25 +74,32 @@ strong {
 .instructions {
   line-height: 1.6;
   font-size: 1.8rem;
+  margin-bottom: 4rem;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
 }
 .spinner {
   padding-top: 6rem;
 }
 @media (max-width: 32em) {
+  section {
+    padding: 3rem 2rem;
+  }
   img {
     width: 90%;
   }
   .text-box {
     display: block;
-    padding: 0 6rem;
   }
   .text-box p {
-    display: flex;
+    text-align: center;
     gap: 1.5rem;
     margin-bottom: 1rem;
   }
-  .instructions {
-    padding: 0 2rem;
+  .text-box p strong {
+    margin-right: 2rem;
   }
 }
 </style>

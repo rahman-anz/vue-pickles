@@ -12,7 +12,7 @@ defineProps({ id: String });
 <style scoped>
 .details {
   display: inline-block;
-  background-color: rgb(251, 90, 32);
+  background-color: #fb5a20;
   transition: all 0.4s;
   padding: 1rem 2rem;
   border-radius: 9px;

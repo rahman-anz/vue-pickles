@@ -28,4 +28,10 @@ p {
   text-align: center;
   padding-top: 3rem;
 }
+@media (max-width: 32em) {
+p{
+  padding: 0 2rem;
+  line-height: 1.6rem;
+}
+}
 </style>

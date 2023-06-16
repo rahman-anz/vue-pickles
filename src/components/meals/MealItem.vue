@@ -9,7 +9,11 @@
           <h3 class="title">{{ shortenedTitle }}</h3></router-link
         >
         <div class="link-box">
-          <btn-youtube v-if="youtube" :href="youtube"></btn-youtube>
+          <btn-youtube
+            v-if="youtube"
+            :color="red"
+            :href="youtube"
+          ></btn-youtube>
           <btn-details v-else :id="id" />
           <btn-save v-if="isSaved" :mode="isSaved" @click="undoSave"
             >Unsave Item</btn-save
@@ -96,5 +100,4 @@ img {
 li:hover img {
   scale: 1.1;
 }
-
 </style>
