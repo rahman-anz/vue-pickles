@@ -4,7 +4,7 @@
       type="text"
       placeholder="Search for Recipe"
       v-model="searchterm"
-      @keyup="searchMeal"
+      @keypress="searchMeal"
     />
     <load-spinner v-if="store.searchedMeals.isLoading"></load-spinner>
     <meal-container
