@@ -26,12 +26,12 @@ h2 {
 p {
   font-size: 1.8rem;
   text-align: center;
+  line-height: 1.6;
   padding-top: 3rem;
 }
 @media (max-width: 32em) {
-p{
-  padding: 0 2rem;
-  line-height: 1.6rem;
-}
+  p {
+    padding: 0 2rem;
+  }
 }
 </style>

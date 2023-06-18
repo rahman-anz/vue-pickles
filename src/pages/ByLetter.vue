@@ -72,6 +72,7 @@ p {
   font-size: 1.8rem;
   text-align: center;
   margin-top: 2rem;
+  line-height: 1.6;
 }
 @media (max-width: 32em) {
   .alphabets {
@@ -80,7 +81,7 @@ p {
     grid-template-columns: repeat(8, 1fr);
   }
   p {
-    line-height: 1.6;
+    
     padding: 2rem;
   }
 }

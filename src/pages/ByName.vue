@@ -53,6 +53,7 @@ input:focus {
 p {
   font-size: 1.6rem;
   margin-top: 2rem;
+  line-height: 1.6;
 }
 @media (max-width: 32em) {
   input {
